@@ -1,0 +1,25 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+.main{
+    width: 100%;
+}
+.login{
+    border: 1px solid red;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+.login__art{
+    border: 1px solid green;
+}
+.login__art > h2, form{
+    width: 100%;
+    color: blue;
+}
+.login__art > form{
+    text-align: center;
+}
+.login__cont{
+    margin: 10px auto;
+}
