@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css"/>
     <link rel="stylesheet" href="../css/login.css">
     <title>Login</title>
 </head>
@@ -16,28 +17,24 @@
     <main class="main">
         <section class="login">
             <article class="login__art">
-                <h2 class="login__title">Iniciar sesion: </h2>
+                <h2>Registrate: </h2>
                 <form action="" method="post">
                     <div class="login__cont">
-                        <label for="user">Nombre de usuario</label>
-                        <input type="text" name="user" id="user">
+                        <label for="name">Nombre de usuario: </label>
+                        <input type="text" name="name" id="name">
                     </div>
                     <div class="login__cont">
-                        <label for="password">Contrasena</label>
-                        <input type="password" name="password" id="password">
+                        <label for="setpass">Establece la contrasena: </label>
+                        <input type="password" name="setpass" id="setpass">
                     </div>
                     <div class="login__cont">
                         <input type="reset" value="Reset">
                         <input type="submit" value="Enviar">
-                        <a href="./registro.php">Registro</a>
                     </div>
                 </form>
             </article>
         </section>
     </main>
-    <footer class="footer">
-        <h2>Footer</h2>
-    </footer>
 </body>
 
 </html>
