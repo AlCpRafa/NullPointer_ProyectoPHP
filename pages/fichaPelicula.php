@@ -14,14 +14,14 @@
         </header>
         <main class="main">
             <section class="ficha">
-<!--                <article class="poster">
+                <article class="poster">
                     <img src="../assets/images/poster_test.jpg" alt="alt" class="poster_img">
-                </article>-->
-                <article class="data">
-                    hello
                 </article>
-                <article class="ficha_btn">
-                    
+                <article class="data">
+                    <h1>Titulo</h1>
+                    <h2>Genero</h2>
+                    <p>Descripcion</p>
+                    <a href="url">Trailer</a>
                 </article>
             </section>
         </main>
