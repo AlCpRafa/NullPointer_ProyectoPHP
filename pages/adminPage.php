@@ -14,7 +14,8 @@ session_start();
     </head>
     <body>
         <?php require_once '../resources/header.php';?>
-        <form action="" method="post">
+        <main class="main">
+            <form action="" method="post">
             <h1>Agnadir una nueva pelicula</h1>
             <div class="admin__cont">
                 <label for="name">Titulo</label>
@@ -37,5 +38,9 @@ session_start();
                 <input type="reset" value="Reset">
             </div>
         </form>
+        </main>
+        <footer class="footer">
+            <h2>Footer</h2>
+        </footer>
     </body>
 </html>
