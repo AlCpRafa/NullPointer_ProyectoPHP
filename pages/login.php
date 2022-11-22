@@ -1,44 +1,7 @@
 <?php
 require_once '../resources/conf/config.php';
-//Variables para almacenar el usuario y la password del usuario
-$username = "";
-$password = "";
-//Se comprueba si se han mandado valores por POST y se almacenan
-if (isset($_POST["user"])) {
-    $username = $_POST["user"];
-}
-if (isset($_POST["password"])) {
-    $password = $_POST["password"];
-}
-//Siempre y cuando estos campos no esten en blanco se porcede a realizar la consulta de los campos en la bbdd
-if ($username != "" && $password != "") {
-    try {
-        //Se crea la conexion
-        $bd = new PDO(DB_HOST, DB_USER, DB_PASS);
-        //Se prepara la consulta
-        $userquery = $bd->prepare("select userName, password, rol from users where userName=? and password=?;");
-        //Se ejecuta pasandole los campos del usuario y la contrasena
-        $userquery->execute(array($username, $password));
-        //Si rowCount es 0 no hay coincidencias y por tanto no existe el usuario o la contrasena es incorrecta
-        echo $userquery->rowCount();
-        if ($userquery->rowCount() === 0) {
-            $searchuser = $bd->prepare("select userName from users where userName=?;");
-            $searchuser->execute(array($username));
-            echo $searchuser->rowCount();
-            if ($searchuser->rowCount() === 0) {
-                echo "No se ha encontrado ningun usuario, regitrate por favor";
-            } else {
-                echo "Contrasena incorrecta";
-            }
-        } else {
-            echo "Login Correcto";
-        }
-        
-    } catch (Exception $exc) {
-        echo $exc->getTraceAsString();
-        echo "fallo";
-    }
-}
+require_once '../resources/funcionesLoginRegistro.php';
+destroyUserSession();
 ?>
 
 <!DOCTYPE html>
@@ -73,6 +36,7 @@ if ($username != "" && $password != "") {
                             <input type="submit" value="Enviar">
                             <a href="./registro.php">Registro</a>
                         </div>
+                        <?php login($username, $password); ?>
                     </form>
                 </article>
             </section>

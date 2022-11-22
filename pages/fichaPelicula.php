@@ -1,3 +1,9 @@
+<?php
+require_once '../resources/conf/config.php';
+require_once '../resources/funcionesLoginRegistro.php';
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="es">
     <head>
@@ -6,12 +12,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../css/style.css">
         <link rel="stylesheet" href="../css/ficha.css">
-        <title>Document</title>
+        <title>Pelis</title>
     </head>
     <body>
-        <header class="header">
-            <h2>SantiFlix</h2>
-        </header>
+        <?php require_once '../resources/header.php';?>
         <main class="main">
             <section class="ficha">
                 <article class="poster">
