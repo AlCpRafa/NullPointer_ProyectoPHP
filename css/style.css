@@ -1,0 +1,64 @@
+/*Estructura general de las paginas*/
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 100vh;
+    display: grid;
+    grid-template: "header" 1fr
+                   "main" 5fr
+                   "footer" 1fr /
+                   1fr;
+    justify-items: center;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: rgba(0,0,0,0.8);
+}
+
+.header__img{
+    width: 5%;
+}
+.main{
+    padding: 20px 0;
+    width: 100%;
+    box-sizing: border-box;
+    grid-area: main;
+    display: flex;
+    justify-content: center;
+}
+
+.section{
+    margin:0 auto;
+    margin-top:1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 90%;
+}
+.section__card{
+    display:flex;
+    flex-direction:column ;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+    height: fit-content;
+    margin: 1rem;
+    border-radius: 5px;
+    border-top: 5px solid gold;
+    background-color: rgba(0, 0, 0, 0.8);
+    font-weight: bold;
+    color: gold;
+}
+.section__card a{
+    text-decoration: none;
+    color: gold;
+    margin: auto;
+}
+.section__imagenes{
+    width:171px;
+    height:252px;
+    border-radius: 5px;
+}
+.title{
+    color: gold;
+}
