@@ -1,14 +1,18 @@
 <?php
+require_once 'funciones.php';
 //Variables para almacenar el nombre y la password del usuario
 $username = "";
 $password = "";
-
+$email = "";
 //Se comprueba si se han mandado valores por POST y se almacenan
 if (isset($_POST["user"])) {
     $username = $_POST["user"];
 }
 if (isset($_POST["password"])) {
     $password = $_POST["password"];
+}
+if (isset($_POST["email"])) {
+    $email = $_POST["email"];
 }
 
 /* ---COOKIES--- */
@@ -81,7 +85,7 @@ function destroyUserSession() {
 /*Funcion que se encarga de verificar que el usuario que se haya introducido no se haya registrado ya en la base de datos*/
 function selectUser($username) {
     $bd = new PDO(DB_HOST, DB_USER, DB_PASS);
-    $searchuser = $bd->prepare("select userName from users where userName=?;");
+    $searchuser = $bd->prepare("select * from users where userName LIKE ?;");
     $searchuser->execute(array($username));
     if ($searchuser->rowCount() === 0) {
         echo "<p>No se ha encontrado ningun usuario, regitrate por favor</p>";
@@ -95,22 +99,22 @@ function selectUser($username) {
 introducidos. El funcionamiento es el siguiente: Se realiza una consulta a la tabla de los users
 y se establece en la clausula where que el nombre y la contrasena sean los que se han introducido en el formulario.
 Si no se encuentra un usuario con la contrasena correspondiente asociada el rowCount sera === 0, de lo contrario sera igual a 1*/
-function userList($username, $password) {
-    //Se crea la conexion
-    $bd = new PDO(DB_HOST, DB_USER, DB_PASS);
-    //Se prepara la consulta
-    $userquery = $bd->prepare("select userName, password, rol from users where userName=? and password=?;");
-    //Se ejecuta pasandole los campos del usuario y la contrasena
-    $userquery->execute(array($username, $password));
-    //Si rowCount es 0 no hay coincidencias y por tanto no existe el usuario o la contrasena es incorrecta
-    return $userquery;
-}
+// function userList($username, $password) {
+//     //Se crea la conexion
+//     $bd = new PDO(DB_HOST, DB_USER, DB_PASS);
+//     //Se prepara la consulta
+//     $userquery = $bd->prepare("select userName, password, rol from users where userName=?;");
+//     //Se ejecuta pasandole los campos del usuario y la contrasena
+//     $userquery->execute(array($username));
+//     //Si rowCount es 0 no hay coincidencias y por tanto no existe el usuario o la contrasena es incorrecta
+//     return $userquery;
+// }
 
 //Siempre y cuando estos campos no esten en blanco se porcede a realizar la consulta de los campos en la bbdd
 function login($username, $password) {
     if ($username != "" && $password != "") {
         try {
-            $userquery = userList($username, $password);
+            $userquery = selectUser($username);
             $userinfo="";
             foreach ($userquery as $value) {
                 $userinfo = $value;
@@ -118,9 +122,15 @@ function login($username, $password) {
             if ($userquery->rowCount() === 0) {
                 $searchuser = selectUser($username);
             } else {
-                destroyErrorLog();
-                createUserSession($username, $userinfo["rol"]);
-                header("Location: ./pages/caratulaPelicula.php");
+                if (strcmp(hash('sha256',$password),$userinfo["password"])) {
+                    destroyErrorLog();
+                    createUserSession($username, $userinfo["rol"]);
+                    header("Location: ./pages/caratulaPelicula.php");
+                } else {
+                    echo strcmp(hash('sha256',$password),$userinfo["password"]);
+                    echo "<p>Datos incorrectos</p>";
+                }
+                
             }
         } catch (Exception $exc) {
             echo $exc->getTraceAsString();
@@ -131,7 +141,7 @@ function login($username, $password) {
 
 /*Funcion que se utiliza en la pagina de registro.php
 Funcionamiento: Se asegura de que se haya introducido. */
-function registro($username, $password) {
+function registro($username, $password, $email) {
     //Para asegurarnos que no se introducen en la tabla los campos vacios
     if ($username != "" && $password != "") {
         //Se realiza una conexion a la base de datos
@@ -140,6 +150,7 @@ function registro($username, $password) {
             if ($searchuser->rowCount() === 0) {
                 insertUser($username, $password);
                 createUserSession($username, null);
+                //email($username,$password,$email);
                 header("Location: ./caratulaPelicula.php");
             } else {
                 echo "<h3>El usuario ya existe</h3>";
@@ -153,11 +164,12 @@ function registro($username, $password) {
 /*Funcion que se utiliza dentro de la funcion registro()
 Inserta dentro de la tabla users un usuario con su respectivo nombre y contrasena */
 function insertUser($username, $password) {
+    $pass = hash('sha256',$password);
     $bd = new PDO(DB_HOST, DB_USER, DB_PASS);
     //Se prepara la query para insertar un nuevo usuario en la tabla users
     $insert_prep = $bd->prepare("insert into users(userName, password) values (?, ?);");
     //Se ejecuta la query con los valores introducidos por el usuario
-    $insert_prep->execute(array($username, $password));
+    $insert_prep->execute(array($username, $pass));
 }
 
 /*Funcion que se utiliza dentro de la funcion registro()
@@ -168,4 +180,3 @@ function searchUser($username) {
     $searchuser->execute(array($username));
     return $searchuser;
 }
-

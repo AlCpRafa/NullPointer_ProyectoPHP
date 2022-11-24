@@ -1,5 +1,6 @@
 body{
     display: grid;
+    box-sizing: border-box;
     grid-template:
     "header header header" 1fr
     "main main main" 5fr

@@ -57,10 +57,7 @@ destroyUserSession();
                 </article>
                 <?php login($username, $password); ?>
             </section>
-
         </main>
-        <footer class="footer">
-            <h2 class="title">Footer</h2>
-        </footer>
+        <footer class="footer"></footer>
     </body>
 </html>

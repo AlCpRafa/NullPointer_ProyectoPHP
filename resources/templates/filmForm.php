@@ -2,7 +2,7 @@
     <h1 class="login__title">Inserta la pelicula: </h1>
     <article class="login__art">
         <form action="adminPelicula.php" method="post">
-    <div>
+    <div class="login__cont">
         <label for="nombre">Nombre de la pelicula:</label>
         <input type="text" name="nombre" id="nombre">
     </div>
@@ -15,16 +15,16 @@
                     $bd = new PDO(DB_HOST,DB_USER,DB_PASS);
                     $query = "select * from generos;";
                     if(!$stmt = $bd->prepare($query)){
-                        echo "<h1>Error en la consulta</h1>";
+                        echo "<h1 class='title'>Error en la consulta</h1>";
                     }
                     if(!$stmt->execute()){
-                        echo "<h1>Error en la consulta</h1>";
+                        echo "<h1 class='title'>Error en la consulta</h1>";
                     }
                     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
                         echo "<option value='".$row['genero']."'>".$row['genero']."</option>";
                     }
                 } catch (PDOException $exc) {
-                    echo "<h1>Error en la consulta</h1>";
+                    echo "<h1 class='title'>Error en la consulta</h1>";
                 }
             ?>
         </select>
@@ -38,16 +38,16 @@
                     $query = "select * from directores;";
                     // $bd = new PDO(DB_HOST,DB_USER,DB_PASS);
                     if(!$stmt = $bd->prepare($query)){
-                        echo "<h1>Error en la consulta</h1>";
+                        echo "<h1 class='title'>Error en la consulta</h1>";
                     }
                     if(!$stmt->execute()){
-                        echo "<h1>Error en la consulta</h1>";
+                        echo "<h1 class='title'>Error en la consulta</h1>";
                     }
                     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
                         echo "<option value='".$row['director']."'>".$row['director']."</option>";
                     }
                 } catch (PDOException $exc) {
-                    echo "<h1>Error en la consulta</h1>";
+                    echo "<h1 class='title'>Error en la consulta</h1>";
                 }
             ?>
         </select>

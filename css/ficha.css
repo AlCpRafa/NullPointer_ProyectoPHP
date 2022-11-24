@@ -16,6 +16,7 @@ body{
 }
 .title{
     color: gold;
+    height: fit-content;
 }
 .ficha{
     background-color: rgba(0,0,0,0.8);
@@ -38,17 +39,7 @@ body{
     text-align: center;
     width:50% ;
 }
-.trailer{
-    margin: auto;
-    width: fit-content;
-    height: fit-content;
-    text-decoration: none;
-    font-weight: bold;
-    color: black;
-    padding: 10px 5px;
-    background-color: gold;
-    border-radius: 5px;
-}
+
 .ficha__contenedor img{
     width: 300px;
     height:400px;
@@ -61,17 +52,31 @@ body{
 a{
     text-decoration: none;
 }
+.trailer{
+    margin: auto;
+    width: fit-content;
+    height: fit-content;
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+    padding: 10px 5px;
+    background-color: gold;
+    border-radius: 5px;
+}
 .ficha__admin{
     padding: 10px;
-    border: 1px solid red;
     width: fit-content;
     height: fit-content;
     display: block;
 }
 .ficha__admin a{
-    border: 1px solid blue;
     background-color: gold;
     padding: 3px 5px;
     font-weight: bold;
     color: black;
+}
+.enlaceblock{
+    display: block;
+    text-decoration: none;
+    color: gold;
 }

@@ -98,7 +98,7 @@ if (count($pelicula) !== 0) {
             <?php
         } else {
             ?>
-            <h1>La pelicula seleccionada no existe</h1>
+            <h1 class='title'>La pelicula seleccionada no existe</h1>
             <a href="../index.php">Volver</a>
             <?php
         }

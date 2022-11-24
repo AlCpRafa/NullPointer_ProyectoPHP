@@ -16,7 +16,6 @@ $id = $_GET['id'];
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../css/headerfooter.css">
-        
         <link rel="stylesheet" href="../css/style.css">
         <link rel="stylesheet" href="../css/ficha.css">
         <title>Fichas</title>
@@ -44,7 +43,7 @@ $id = $_GET['id'];
                     echo("<h2 class='ficha__descripcion title'>Director: " . $value['director'] . "</h2>");
                     echo("<h3 class='ficha__descripcion title'>Genero: " . $value['genero'] . "</h3>");
                     echo("<p class='ficha__descripcion'>" . $value['descripcion'] . "</p>");
-                    echo("<a class='titulo' target='auto_blank' href='" . $value['url_trailer'] . "'>¡Ver trailer!</a>");
+                    echo("<a class='trailer' target='auto_blank' href='" . $value['url_trailer'] . "'>¡Ver trailer!</a>");
                     echo("</div>");
                     echo("<div class='ficha__contenedor'>");
                     echo("<img class='section__imagenes' src=../assets/images/caratulas/" . $value['url'] . " alt='caratula de la pelicula'>");

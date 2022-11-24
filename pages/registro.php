@@ -27,24 +27,24 @@ destroyErrorLog();
                     <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
                         <div class="login__cont">
                             <label for="user">Nombre de usuario: </label>
-                            <input type="text" name="user" id="user">
+                            <input type="text" name="user" id="user" required="required">
                         </div>
                         <div class="login__cont">
                             <label for="password">Establece la contrasena: </label>
-                            <input type="password" name="password" id="password">
+                            <input type="password" required="required" name="password" id="password">
                         </div>
                         <div class="login__cont">
                             <label for="email">Introduce el email: </label>
-                            <input type="email" id="email" name="email">
+                            <input required="required" type="email" id="email" name="email">
                         </div>
                         <div class="login__cont">
                             <div class="botonera">
-                                <input type="reset" value="Reset">
-                                <input type="submit" value="Enviar">
-                                <a href="../index.php">Login</a>
+                                <input class="btn" type="reset" value="Reset">
+                                <input class="btn" type="submit" value="Enviar">
+                                <a class="btn" href="../index.php">Login</a>
                             </div>
                         </div>
-                        <?php registro($username, $password); ?>
+                        <?php registro($username, $password, $email); ?>
                     </form>
                 </article>
             </section>

@@ -21,7 +21,8 @@
 }
 .login__art > form{
     text-align: left;
-    border: 3px solid red;
+    border: 3px solid gold;
+    border-top: transparent;
 }
 .login__art input{
     max-width: 40%;
@@ -33,7 +34,6 @@
     width: 20%;
     color: gold;
     background-color: black;
-    border: 1px solid red;
     position: relative;
     left: 70%;
     top: 1%;
@@ -50,6 +50,7 @@
 }
 
 .btn{
+    text-decoration: none;
     height: fit-content;
     width: fit-content;
     font-weight: bold;
