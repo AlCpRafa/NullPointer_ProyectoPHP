@@ -1,0 +1,16 @@
+.header{
+    grid-area: header;
+    border-bottom: 1px solid gold;
+    background: linear-gradient(to left, rgba(0,0,0,0), rgba(0,0,0,1)), url(../assets/images/pelis.jpg);
+    background-position: top;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+.footer{
+    grid-area: footer;
+    background: linear-gradient(to left, rgba(0,0,0,0), rgba(0,0,0,1)), url(../assets/images/pelis.jpg);
+    background-position: bottom;
+    display: flex;
+    align-items: center;
+}
