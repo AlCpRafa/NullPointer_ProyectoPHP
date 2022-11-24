@@ -1,0 +1,25 @@
+.header{
+    box-sizing: border-box;
+    padding: 10px;
+    grid-area: header;
+    border-bottom: 1px solid gold;
+    background: linear-gradient(to left, rgba(0,0,0,0), rgba(0,0,0,1)), url(../assets/images/pelis.jpg);
+    color: gold;
+    background-position: top;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+.footer{
+    box-sizing: border-box;
+    border-top: 1px solid gold;
+    padding: 10px;
+    grid-area: footer;
+    background: linear-gradient(to left, rgba(0,0,0,0), rgba(0,0,0,1)), url(../assets/images/pelis.jpg);
+    background-position: bottom;
+    color: gold;
+    display: flex;
+    align-items: center;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
