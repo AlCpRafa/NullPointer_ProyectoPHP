@@ -12,6 +12,20 @@ require_once 'resources/conf/config.php';
 require_once 'resources/funcionesLoginRegistro.php';
 session_start();
 destroyUserSession();
+try {
+    $bd = new PDO(DB_HOST,DB_USER,DB_PASS);
+} catch (PDOException $exc) {
+    $bd = new PDO("mysql:host=127.0.0.1","root","");
+    $bd->beginTransaction();
+    $query=file_get_contents("resources/conf/script.sql");
+    try {
+        $stmt = $bd->exec($query);
+        $bd->commit();
+    } catch (PDOException $exc) {
+        $bd->rollBack();
+        echo "error al crear la base de datos: ".$exc->getMessage();
+    }
+}
 ?>
 
 <!DOCTYPE html>
