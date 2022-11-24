@@ -35,8 +35,8 @@ timeoutSession();
                     echo("<a href='ficha.php?id=".$value['id']."'>");
                     echo("<p class='section__titulo'>" . $value['pelicula'] . "</p>");
                     echo("<img class='section__imagenes' src=../assets/images/caratulas/" . $value['url'] . " alt='caratula de la pelicula'>");
-                    echo("</article>");
                     echo("</a>");
+                    echo("</article>");
                 }
                 echo("</section>");
             } catch (PDOException $EX) {
