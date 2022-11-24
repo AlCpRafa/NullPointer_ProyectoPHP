@@ -30,7 +30,7 @@ destroyUserSession();
 
     <body>
         <header class="header">
-            <h1 class="title">NullPointer</h3>
+            <h1 class="title">NullPointer</h1>
         </header>
         <main class="main">
             <section class="login">
