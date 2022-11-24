@@ -1,0 +1,10 @@
+.login{
+    border: 1px solid red;
+    text-align: center;
+}
+.login__art{
+    border: 1px solid green;
+}
+.login__art > form{
+    text-align: center;
+}
