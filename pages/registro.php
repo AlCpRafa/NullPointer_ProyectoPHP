@@ -13,7 +13,8 @@ destroyErrorLog();
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../css/style.css"/>
-        <link rel="stylesheet" href="../css/login.css">
+        <link rel="stylesheet" href="../css/headerfooter.css">
+        <link rel="stylesheet" href="../css/login.css"/>
         <title>Login</title>
     </head>
 
@@ -22,7 +23,7 @@ destroyErrorLog();
         <main class="main">
             <section class="login">
                 <article class="login__art">
-                    <h2>Registrate: </h2>
+                    <h2 class="login__title">Registrate: </h2>
                     <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
                         <div class="login__cont">
                             <label for="user">Nombre de usuario: </label>
@@ -39,6 +40,7 @@ destroyErrorLog();
                         <div class="login__cont">
                             <input type="reset" value="Reset">
                             <input type="submit" value="Enviar">
+                            <a href="../index.php">Login</a>
                         </div>
                         <?php registro($username, $password); ?>
                     </form>

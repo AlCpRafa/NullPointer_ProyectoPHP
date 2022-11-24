@@ -1,3 +1,4 @@
+<h1>Inserta la pelicula: </h1>
 <form action="adminPelicula.php" method="post">
     <div>
         <label for="nombre">Nombre de la pelicula:</label>

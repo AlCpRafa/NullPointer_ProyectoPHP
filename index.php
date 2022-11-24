@@ -1,7 +1,7 @@
 <?php
 if (!file_exists("resources/conf/config.php")) {
-    $conf = fopen("resources/conf/config.php","w");
-    fwrite($conf,'<?php
+    $conf = fopen("resources/conf/config.php", "w");
+    fwrite($conf, '<?php
     define("DB_HOST","mysql:dbname=nullPointer;host=127.0.0.1");
     define("DB_USER","nullPointer");
     define("DB_PASS","123");');
@@ -21,7 +21,8 @@ destroyUserSession();
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="./css/index.css">
-        <link rel="stylesheet" href="./css/headerfooter.css"/>
+        <link rel="stylesheet" href="./css/headerfooter.css">
+        <link rel="stylesheet" href="./css/login.css">
         <title>Login</title>
     </head>
 
@@ -43,14 +44,18 @@ destroyUserSession();
                             <input type="password" name="password" id="password">
                         </div>
                         <div class="login__cont">
-                            <input type="reset" value="Reset">
-                            <input type="submit" value="Enviar">
-                            <a href="./pages/registro.php">Registro</a>
+                            <div class="botonera">
+                                <input type="reset" value="Reset">
+                                <input type="submit" value="Enviar">
+                                <a href="./pages/registro.php">Registro</a>
+                            </div>
+
                         </div>
-                        <?php login($username, $password); ?>
                     </form>
                 </article>
+                <?php login($username, $password); ?>
             </section>
+
         </main>
         <footer class="footer">
             <h2 class="title">Footer</h2>

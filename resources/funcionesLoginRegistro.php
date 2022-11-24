@@ -61,7 +61,7 @@ function timeoutSession() {
         //Se destruye la sesion
         destroyUserSession();
         //Redirige al usuario al login
-        header("Location: ./login.php");
+        header("Location: ../index.php");
     }
     //Se crea la variable de sesion ult_actividad o se actualiza dandole el valor de time() en ese momento
     $_SESSION["ult_actividad"] = time();
@@ -84,9 +84,9 @@ function selectUser($username) {
     $searchuser = $bd->prepare("select userName from users where userName=?;");
     $searchuser->execute(array($username));
     if ($searchuser->rowCount() === 0) {
-        echo "<h3>No se ha encontrado ningun usuario, regitrate por favor</h3>";
+        echo "<p>No se ha encontrado ningun usuario, regitrate por favor</p>";
     } else {
-        echo "<h3>Contrasena incorrecta</h3>";
+        echo "<p>Contrasena incorrecta</p>";
         errorCookie();
     }
     return $searchuser;
@@ -103,7 +103,6 @@ function userList($username, $password) {
     //Se ejecuta pasandole los campos del usuario y la contrasena
     $userquery->execute(array($username, $password));
     //Si rowCount es 0 no hay coincidencias y por tanto no existe el usuario o la contrasena es incorrecta
-    echo $userquery->rowCount();
     return $userquery;
 }
 

@@ -19,6 +19,7 @@
     // var_dump($pelicula[0]);
     if(count($pelicula)!==0){
 ?>
+<h1>Actualiza la pelicula: </h1>
 <form action="adminPelicula.php?id=<?=$id?>" method="post">
     <div>
         <label for="nombre">Nombre de la pelicula:</label>
