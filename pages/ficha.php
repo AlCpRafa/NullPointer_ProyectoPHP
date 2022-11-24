@@ -34,11 +34,11 @@
                 $stmt->closeCursor();
                 foreach ($peliculas as $value) {
                     echo("<article class='ficha'>");
-                    echo("<h2 class='ficha__titulo'>" . $value['pelicula'] . "</h2>");
+                    echo("<h2 class='ficha__titulo title'>" . $value['pelicula'] . "</h2>");
                     echo("<section class='ficha__parcial'>");
                     echo("<div class='ficha__total'>");
-                    echo("<h2 class='ficha__descripcion'>Director: " . $value['director'] . "</h2>");
-                    echo("<h3 class='ficha__descripcion'>Genero: " . $value['genero'] . "</h3>");
+                    echo("<h2 class='ficha__descripcion title'>Director: " . $value['director'] . "</h2>");
+                    echo("<h3 class='ficha__descripcion title'>Genero: " . $value['genero'] . "</h3>");
                     echo("<p class='ficha__descripcion'>" . $value['descripcion'] . "</p>");
                     echo("<a target='auto_blank' href='" . $value['url_trailer'] . "'> <button class='ficha__boton' type='button'>¡Ver trailer!</button></a>");
                     echo("</div>");
