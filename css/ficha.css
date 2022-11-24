@@ -3,6 +3,7 @@ body{
     margin: 0px;
     height: 100vh;
     width: 100vw;
+    box-sizing: border-box;
     display: grid;
     grid-template:
     "header header header" 1fr
@@ -37,8 +38,16 @@ body{
     text-align: center;
     width:50% ;
 }
-.ficha__boton{
-    margin:auto;
+.trailer{
+    margin: auto;
+    width: fit-content;
+    height: fit-content;
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+    padding: 10px 5px;
+    background-color: gold;
+    border-radius: 5px;
 }
 .ficha__contenedor img{
     width: 300px;
@@ -51,4 +60,18 @@ body{
 }
 a{
     text-decoration: none;
+}
+.ficha__admin{
+    padding: 10px;
+    border: 1px solid red;
+    width: fit-content;
+    height: fit-content;
+    display: block;
+}
+.ficha__admin a{
+    border: 1px solid blue;
+    background-color: gold;
+    padding: 3px 5px;
+    font-weight: bold;
+    color: black;
 }

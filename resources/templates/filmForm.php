@@ -1,10 +1,12 @@
-<h1>Inserta la pelicula: </h1>
-<form action="adminPelicula.php" method="post">
+<section class="login">
+    <h1 class="login__title">Inserta la pelicula: </h1>
+    <article class="login__art">
+        <form action="adminPelicula.php" method="post">
     <div>
         <label for="nombre">Nombre de la pelicula:</label>
         <input type="text" name="nombre" id="nombre">
     </div>
-    <div>
+    <div class="login__cont">
         <label for="genero">Género</label>
         <select name="genero" id="genero">
             <option value=""></option>
@@ -27,7 +29,7 @@
             ?>
         </select>
     </div>
-    <div>
+    <div class="login__cont">
         <label for="director">Director:</label>
         <select name="director" id="director">
             <option value=""></option>
@@ -50,17 +52,19 @@
             ?>
         </select>
     </div>
-    <div>
+    <div class="login__cont">
         <label for="observaciones">Observaciones</label>
         <textarea name="observaciones" id="observaciones" cols="30" rows="10"></textarea>
     </div>
-    <div>
+    <div class="login__cont">
         <label for="portada">Url de la portada</label>
         <input type="text" name="portada" id="portada">
     </div>
-    <div>
+    <div class="login__cont">
         <label for="url">Url del trailer</label>
         <input type="url" name="url" id="url">
     </div>
     <input type="submit" value="Aceptar">
 </form>
+    </article>
+</section>

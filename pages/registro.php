@@ -19,7 +19,7 @@ destroyErrorLog();
     </head>
 
     <body>
-        <?php require_once '../resources/header.php';?>
+        <?php require_once '../resources/header.php'; ?>
         <main class="main">
             <section class="login">
                 <article class="login__art">
@@ -38,16 +38,18 @@ destroyErrorLog();
                             <input type="email" id="email" name="email">
                         </div>
                         <div class="login__cont">
-                            <input type="reset" value="Reset">
-                            <input type="submit" value="Enviar">
-                            <a href="../index.php">Login</a>
+                            <div class="botonera">
+                                <input type="reset" value="Reset">
+                                <input type="submit" value="Enviar">
+                                <a href="../index.php">Login</a>
+                            </div>
                         </div>
                         <?php registro($username, $password); ?>
                     </form>
                 </article>
             </section>
         </main>
-        <?php require_once '../resources/footer.php';?>
+        <?php require_once '../resources/footer.php'; ?>
     </body>
 
 </html>

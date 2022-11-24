@@ -140,7 +140,7 @@ function registro($username, $password) {
             if ($searchuser->rowCount() === 0) {
                 insertUser($username, $password);
                 createUserSession($username, null);
-                header("Location: ./fichaPelicula.php");
+                header("Location: ./caratulaPelicula.php");
             } else {
                 echo "<h3>El usuario ya existe</h3>";
             }

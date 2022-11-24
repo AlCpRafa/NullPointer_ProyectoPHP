@@ -22,7 +22,9 @@ destroyUserSession();
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="./css/index.css">
         <link rel="stylesheet" href="./css/headerfooter.css">
-        <link rel="stylesheet" href="./css/login.css">
+        <link rel="stylesheet" href="./css/style.css">
+                <link rel="stylesheet" href="./css/login.css">
+
         <title>Login</title>
     </head>
 
@@ -45,9 +47,9 @@ destroyUserSession();
                         </div>
                         <div class="login__cont">
                             <div class="botonera">
-                                <input type="reset" value="Reset">
-                                <input type="submit" value="Enviar">
-                                <a href="./pages/registro.php">Registro</a>
+                                <input class="btn" type="reset" value="Reset">
+                                <input class="btn" type="submit" value="Enviar">
+                                <a class="btn" href="./pages/registro.php">Registro</a>
                             </div>
 
                         </div>
