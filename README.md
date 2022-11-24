@@ -3,4 +3,4 @@ Proyecto del grupo NullPointer formado por: Santiago Garcia Barquero y Oscar Gar
 Notas:
 
 -Oscar Garcia Dorado: 8
--Rafael Alonso Cepeda: 7
+-Rafael Alonso Cepeda: 7.5
