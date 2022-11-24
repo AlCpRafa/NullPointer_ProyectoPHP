@@ -33,7 +33,7 @@ timeoutSession();
                 foreach ($peliculas as $value) {
                     echo("<a href='ficha.php'>");
                     echo("<article class='section__card'>");
-                    echo("<a href='ficha.php'>");
+                    echo("<a href='ficha.php?id=".$value['id']."'>");
                     echo("<p class='section__titulo'>" . $value['pelicula'] . "</p>");
                     echo("<img class='section__imagenes' src=../assets/images/caratulas/" . $value['url'] . " alt='caratula de la pelicula'>");
                     echo("</article>");
