@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../css/style.css">
         <link rel="stylesheet" href="../css/headerfooter.css">
         <link rel="stylesheet" href="../css/ficha.css">
         <title>Fichas</title>
@@ -36,21 +37,16 @@
                     echo("<h2 class='ficha__titulo'>" . $value['pelicula'] . "</h2>");
                     echo("<section class='ficha__parcial'>");
                     echo("<div class='ficha__total'>");
-                    echo("<h2 class='ficha__descripcion'>" . $value['director'] . "</h2>");
-                    echo("<h3 class='ficha__descripcion'>" . $value['genero'] . "</h3>");
+                    echo("<h2 class='ficha__descripcion'>Director: " . $value['director'] . "</h2>");
+                    echo("<h3 class='ficha__descripcion'>Genero: " . $value['genero'] . "</h3>");
                     echo("<p class='ficha__descripcion'>" . $value['descripcion'] . "</p>");
-                    echo("<a target='auto_blank' href='" . $value['url_trailer'] . "' <button class='ficha__boton' type='button'>¡Ver trailer!</button>");
+                    echo("<a target='auto_blank' href='" . $value['url_trailer'] . "'> <button class='ficha__boton' type='button'>¡Ver trailer!</button></a>");
                     echo("</div>");
                     echo("<div class='ficha__contenedor'>");
                     echo("<img class='section__imagenes' src=../assets/images/caratulas/" . $value['url'] . " alt='caratula de la pelicula'>");
                     echo("</div>");
-                    echo("<section class=''>");
                     echo("</article>");
                 }
-
-                echo("<section class='section'>");
-
-                echo("</section>");
             } catch (PDOException $EX) {
                 echo ($EX->getMessage());
             }
