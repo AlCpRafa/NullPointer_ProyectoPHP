@@ -2,6 +2,7 @@
 require_once '../resources/conf/config.php';
 require_once '../resources/funcionesLoginRegistro.php';
 session_start();
+destroyUserSession();
 destroyErrorLog();
 ?>
 <!DOCTYPE html>
@@ -40,9 +41,7 @@ destroyErrorLog();
                 </article>
             </section>
         </main>
-        <footer class="footer">
-            <h2>Footer</h2>
-        </footer>
+        <?php require_once '../resources/footer.php';?>
     </body>
 
 </html>

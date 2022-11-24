@@ -9,49 +9,50 @@ if (!file_exists("resources/conf/config.php")) {
     fclose($conf);
 }
 require_once 'resources/conf/config.php';
-try {
-    $bd = new PDO(DB_HOST,DB_USER,DB_PASS);
-} catch (PDOException $exc) {
-    $bd = new PDO("mysql:host=127.0.0.1","root","");
-    $query=file_get_contents("resources/conf/script.sql");
-    try {
-        $stmt = $bd->query($query);
-    } catch (PDOException $exc) {
-        echo "error al crear la base de datos: ".$exc->getMessage();
-    }
-}
+require_once 'resources/funcionesLoginRegistro.php';
+session_start();
+destroyUserSession();
 ?>
+
 <!DOCTYPE html>
 <html lang="es">
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
+        <link rel="stylesheet" href="./css/index.css">
+        <title>Login</title>
     </head>
+
     <body>
-        <?php
-        
-        $resultados = [];
-        try {
-            $bd = new PDO(DB_HOST,DB_USER,DB_PASS);
-            if(!$stmt = $bd->prepare("select * from peliculas;")){
-                throw new Exception("Error Processing Request", 1);
-            }
-            if(!$stmt->execute()){
-                throw new Exception("Error Processing Request execute", 1);
-            }
-            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
-                array_push($resultados,$row);
-            }
-        } catch (PDOException $exc) {
-            echo "error al crear la base de datos: ".$exc->getMessage();
-        }
-        $stmt->closeCursor();
-        foreach ($resultados as $value) {
-            var_dump($resultados);
-            echo "<br>";
-        }
-    ?>
+        <header class="header">
+            <h1 class="title">NullPointer</h3>
+        </header>
+        <main class="main">
+            <section class="login">
+                <article class="login__art">
+                    <h2 class="login__title">Iniciar sesion: </h2>
+                    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+                        <div class="login__cont">
+                            <label for="user">Nombre de usuario</label>
+                            <input type="text" name="user" id="user">
+                        </div>
+                        <div class="login__cont">
+                            <label for="password">Contrasena</label>
+                            <input type="password" name="password" id="password">
+                        </div>
+                        <div class="login__cont">
+                            <input type="reset" value="Reset">
+                            <input type="submit" value="Enviar">
+                            <a href="./pages/registro.php">Registro</a>
+                        </div>
+                        <?php login($username, $password); ?>
+                    </form>
+                </article>
+            </section>
+        </main>
+        <footer class="footer">
+            <h2 class="title">Footer</h2>
+        </footer>
     </body>
 </html>

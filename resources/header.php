@@ -1,7 +1,6 @@
 <?php
 require_once '../resources/conf/config.php';
 require_once '../resources/funcionesLoginRegistro.php';
-timeoutSession();
 ?>
 
 <header class="header">
