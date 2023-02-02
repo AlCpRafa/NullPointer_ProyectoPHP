@@ -1,5 +1,5 @@
 # NullPointer_ProyectoPHP
-Proyecto del grupo NullPointer formado por: Santiago Garcia Barquero y Oscar Garcia Dorado.
+Proyecto del grupo NullPointer formado por: Rafael Alonso Cepeda, Santiago Garcia Barquero y Oscar Garcia Dorado.
 Notas:
 
 -Oscar Garcia Dorado: 8
